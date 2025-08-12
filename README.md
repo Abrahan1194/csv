@@ -93,8 +93,7 @@ PDF.
 • Carga masiva desde CSV: funcional y documentada.
 • CRUD: implementado y con dashboard funcional.
 • Frontend: sencillo y funcional.
-• Postman: colección completa con CRUD + 3 consultas avanzadas.
-• README.md: claro, completo y en inglés.
+• Pf.
 Entregables
 • Carpeta del proyecto comprimida en .zip y subida a Moodle.
 • Repositorio público en GitHub con:
@@ -104,3 +103,31 @@ Entregables
  Archivo CSV.
  Colección de Postman.
  README.md documentado.
+
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    email VARCHAR(255) UNIQUE,
+    password_hash VARCHAR(255),
+    created_at TIMESTAMP
+);
+
+CREATE TABLE invoices (
+    id SERIAL PRIMARY KEY,
+    user_id INT,
+    amount NUMERIC(10, 2),
+    status VARCHAR(50),
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP
+);
+
+CREATE TABLE transactions (
+    id SERIAL PRIMARY KEY,
+    invoice_id INT,
+    amount NUMERIC(10, 2),
+    payment_method VARCHAR(100),
+    transaction_date TIMESTAMP,
+    status VARCHAR(50),
+    currency VARCHAR(10)
+);
