@@ -105,29 +105,30 @@ Entregables
  README.md documentado.
 
 
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    email VARCHAR(255) UNIQUE,
-    password_hash VARCHAR(255),
-    created_at TIMESTAMP
-);
+CREATE TABLE users ( 
+id SERIAL PRIMARY KEY, 
+names VARCHAR(255), 
+documents VARCHAR(255), 
+adress VARCHAR (255) ,
+phone VARCHAR (255) ,
+email VARCHAR(255) UNIQUE
+)
 
-CREATE TABLE invoices (
-    id SERIAL PRIMARY KEY,
-    user_id INT,
-    amount NUMERIC(10, 2),
-    status VARCHAR(50),
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP
-);
 
-CREATE TABLE transactions (
-    id SERIAL PRIMARY KEY,
-    invoice_id INT,
-    amount NUMERIC(10, 2),
-    payment_method VARCHAR(100),
-    transaction_date TIMESTAMP,
-    status VARCHAR(50),
-    currency VARCHAR(10)
-);
+CREATE TABLE invoices ( 
+id SERIAL PRIMARY KEY ,
+platform_used VARCHAR(255), 
+invoice_numbers VARCHAR(255),
+billing_periods VARCHAR(255), 
+amount_billeds varchar(255), 
+amount_paids VARCHAR(255) 
+)
+
+
+CREATE TABLE transactions ( 
+id SERIAL PRIMARY KEY, 
+dates VARCHAR(255), 
+times_of_transactions VARCHAR(255), 
+transactions_statut VARCHAR(255), 
+transactions_type VARCHAR(255)
+)
